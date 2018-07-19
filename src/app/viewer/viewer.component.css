@@ -1,0 +1,9 @@
+
+.image-pagination {
+  margin: 20px 0 50px;
+}
+
+.image-pagination .btn {
+  border-radius: 20px;
+  margin-right: 10px;
+}
