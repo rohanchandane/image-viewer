@@ -1,5 +1,4 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
-import { ViewerService } from './../viewer/viewer.service';
 import { Image } from './image';
 
 @Component({
@@ -13,8 +12,6 @@ export class ViewerComponent implements OnChanges {
 
   paginationFirstCount: number;
   paginationLastCount: number;
-
-  constructor(private viewerService: ViewerService) {}
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes['images']) {
