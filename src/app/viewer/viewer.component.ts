@@ -45,7 +45,7 @@ export class ViewerComponent implements OnChanges {
   }
 
   nextRecords() {
-    if (this.paginationLastCount + 4 <= this.images.length) {
+    if (this.paginationLastCount < this.images.length) {
       this.paginationFirstCount = this.paginationFirstCount + 4;
       this.paginationLastCount = this.paginationLastCount + 4;
       this.loadPaginatedImages(this.paginationFirstCount, this.paginationLastCount);

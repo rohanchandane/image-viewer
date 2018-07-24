@@ -37,16 +37,18 @@ export class AppComponent implements OnInit {
 
   search(): void {
     this.searchedImages = [];
-    for (let i = 0; i < this.images.length; i++) {
-      if (this.images[i].title.includes(this.selected)) {
-        this.searchedImages.push(this.images[i]);
+
+    if (this.selected) {
+      for (let i = 0; i < this.images.length; i++) {
+        if (this.images[i].title.includes(this.selected)) {
+          this.searchedImages.push(this.images[i]);
+        }
       }
     }
 
     if (!this.searchedImages.length) {
       this.searchedImages = this.images;
     }
-
   }
 
 }
