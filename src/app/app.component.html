@@ -6,7 +6,7 @@
       </button>
       <div class="collapse navbar-collapse mr-auto" id="navbarCollapse">
         <ul class="navbar-nav mr-auto"></ul>
-        <form class="form-inline mt-2 mt-md-0">
+        <form class="form-inline mt-2 mt-md-0" (submit)="search()">
           <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" [(ngModel)]="selected" [typeahead]="searchTitles" class="form-control" name="search">
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="search()">Search</button>
         </form>
