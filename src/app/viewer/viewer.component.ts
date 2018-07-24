@@ -1,6 +1,12 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { Image } from './image';
 
+import { BsModalService } from 'ngx-bootstrap/modal';
+import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
+
+import { ModalContentComponent } from './modal-content.component';
+
+
 @Component({
   selector: 'app-viewer',
   templateUrl: './viewer.component.html',
@@ -12,6 +18,17 @@ export class ViewerComponent implements OnChanges {
 
   paginationFirstCount: number;
   paginationLastCount: number;
+
+  bsModalRef: BsModalRef;
+
+  constructor(private modalService: BsModalService) { }
+
+  openModal(image: Image) {
+    const initialState = {
+      image: image
+    };
+    this.bsModalRef = this.modalService.show(ModalContentComponent, { initialState });
+  }
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes['images']) {
